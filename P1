@@ -1,0 +1,25 @@
+from datetime import datetime
+
+class Person:
+    def __init__(self, name, country, dob):
+        self.name = name
+        self.country = country
+        self.dob = datetime.strptime(dob, "%Y-%m-%d")
+    
+    def calculate_age(self):
+        # Get current date
+        today = datetime.today()
+        
+        # Calculate Age
+        age = today.year - self.dob.year
+        
+        if today.month < self.dob.month or (today.month == self.dob.month and today.day < self.dob.day):
+            age -= 1
+        
+        return age
+
+    def __str__(self):
+        return f"Name: {self.name}\nCountry: {self.country}\nDOB: {self.dob.strftime('%Y-%m-%d')}\nAge: {self.calculate_age()}"
+
+person1 = Person("Neel Joshi", "India", "2004-01-5")
+print(person1)
