@@ -1,0 +1,26 @@
+class vehicle:
+    def speed(self):
+        return None
+
+class car(vehicle):
+    def speed(self):
+        return "The Car Max Speed is 360Kmph"
+
+class bike(vehicle):
+    def speed(self):
+        return "The Bike Max Speed is 180Kmph"
+
+class train(vehicle):
+    def speed(self):
+        return "The Train Max Speed is 480Kmph"
+
+def showSpeed(obj):
+    return obj.speed()
+
+c=car()
+b=bike()
+t=train()
+
+print(showSpeed(c))
+print(showSpeed(b))
+print(showSpeed(t)) 
