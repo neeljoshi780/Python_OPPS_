@@ -1,0 +1,29 @@
+class person:
+    def setInfo(self,name,city):
+        self.name=name
+        self.city=city
+
+    def display(self):
+        print(f"Person Name: {self.name}")
+        print(f"Person City: {self.city}")
+
+class employee(person):
+    def __init__(self,empID,position,salary):
+        self.empID=empID
+        self.position=position
+        self.salary=salary
+    
+    # Override method
+    def display(self):
+        print(f"Employee Name: {self.name}")
+        print(f"Employee City: {self.city}")
+        print(f"Employee ID: {self.empID}")
+        print(f"Employee Position: {self.position}")
+        print(f"Employee Salary: {self.salary}")
+
+p=person()
+p.setInfo("Gautam Joshi","Palanpur")
+p.display()
+e=employee(101,"Manager",500000)
+e.setInfo("Neel Joshi","Palanpur")
+e.display()
