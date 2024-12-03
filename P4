@@ -1,0 +1,51 @@
+class BankAccount:
+    def __init__(self,accountNo,balance):
+        self.__accountNo=accountNo
+        self.__balance=balance
+    
+    def accountNo(self):
+        return self.__accountNo
+
+    # Amount Deposit Method
+    def deposit(self,amount):
+        self.__balance+=amount
+        return self.__balance
+    
+    # Amount Withdraw Method
+    def withdraw(self,amount):
+        if(self.__balance>=amount):
+            self.__balance-=amount
+            return True
+        
+        return False
+    
+    # Show Balance Method
+    def get_balance(self):
+        return self.__balance
+    
+c1=BankAccount(780,15000)
+while(True):
+    print("1 deposit")
+    print("2 withdraw")
+    print("3 Check Balance")
+    print("4 Exit")
+    c=int(input("Enter the choice:"))
+
+    if(c==1):
+        damount=int(input("Enter Deposit Amount:"))
+        print(damount,"Rupees Deposit is Your Bank Account Number",c1.accountNo(),"Successfull")
+        c1.deposit(damount)
+    elif(c==2):
+        wamount=int(input("Enter Withdraw Amount:"))
+        if(wamount<=0):
+            print("Please Enter Amount is Grater Zero")
+        elif(c1.withdraw(wamount)==True):
+            print(wamount,"Rupees Withdraw is Your Bank Account Number",c1.accountNo(),"Successfull")
+        else:
+            print("Your Balance is Insufficient.!!")
+    elif(c==3):
+        print("Your Balance is:",c1.get_balance())
+    elif(c==4):
+        break
+    else:
+        print("Pls Enter the Correct choice.!!")
